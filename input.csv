@@ -1,23 +1,13 @@
 Date;Event;Gate
-2019-02-04 09:05:58 ;Reader entry;E/0/KD1/7-9
-2019-02-04 09:07:03 ;Reader entry;E/3/KD1/3-8
-2019-02-04 17:32:34 ;Reader exit;E/3/KD1/3-8
-2019-02-04 19:33:03 ;Reader exit;E/0/KD1/7-8
-2019-02-05 09:10:34 ;Reader entry;E/0/KD1/7-9
-2019-02-05 09:11:35 ;Reader entry;E/3/KD1/3-8
-2019-02-05 15:26:36 ;Reader entry;E/0/KD1/8-8
-2019-02-06 09:21:57 ;Reader entry;E/0/KD1/7-9
-2019-02-06 09:22:27 ;Reader entry;E/3/KD1/3-8
-2019-02-06 12:07:06 ;Reader exit;E/3/KD1/3-8
-2019-02-06 12:07:54 ;Reader entry;E/0/KD1/7-8
-2019-02-06 12:23:43 ;Reader entry;E/0/KD1/7-9
-2019-02-06 12:24:31 ;Reader entry;E/3/KD1/3-8
-2019-02-06 16:09:44 ;Reader exit;E/0/KD1/8-8
-2019-02-07 09:09:57 ;Reader entry;E/0/KD1/7-9
-2019-02-07 09:10:27 ;Reader entry;E/3/KD1/3-8
-2019-02-07 10:56:26 ;Reader exit;E/3/KD1/3-8
-2019-02-07 10:57:18 ;Reader entry;E/0/KD1/7-8
-2019-02-07 11:05:01 ;Reader entry;E/0/KD1/7-9
-2019-02-07 11:06:40 ;Reader exit;E/2/KD1/4-8
-2019-02-07 12:33:01 ;Reader entry;E/3/KD1/3-8
-2019-02-07 18:33:50 ;Reader exit;E/0/KD1/7-8
+2018-09-30 01:08:41   ;Reader entry;E/0/KD1/7-9
+2018-09-30 12:52:34  ;Reader entry;E/0/KD1/7-7
+2018-09-30 13:08:59     ;Reader entry;E/0/KD1/7-8
+2019-09-30 14:38:17;Reader entry;E/0/KD1/7-12
+2019-09-30 15:48:41;Reader exit;E/0/KD1/7-12
+2020-09-30 16:59:34  ;Reader entry;E/0/KD1/7-13
+2020-09-30 17:08:59  ;Reader entry;E/0/KD1/7-18
+2020-09-30 18:38:59  ;Reader exit;E/0/KD1/7-9
+2020-12-31 19:33:33  ;Reader entry;E/0/KD1/7-0
+2020-12-31 23:33:33  ;Reader exit;E/0/KD1/7-9
+2020-01-01 00:33:33;Reader entry;E/0/KD1/7-9
+2020-01-01 05:33:33  ;Reader exit;E/0/KD1/7-5
