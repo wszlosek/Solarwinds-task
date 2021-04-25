@@ -1,7 +1,4 @@
-# Wojciech Szlosek
-
-from datetime import datetime
-from datetime import timedelta
+from datetime import datetime, timedelta
 import time
 import random
 
@@ -287,7 +284,9 @@ def full_time_weekly(different_dates) -> list:
     return max_of_week
 
 
-def display(different_dates, intervals, dates, statuses, codes):
+def create_lines(different_dates, intervals, dates, statuses, codes) -> list:
+    """Return lines to be written to file."""
+
     output = []
     t = 0
     for i in range(len(different_dates)):
@@ -392,7 +391,7 @@ def program(filename="input.csv"):
             intervals.append(str(different_time(f2, f1)))
             f1 = date[i + 1]
 
-    to_file = display(different_dates, intervals, date, statuses, codes)
+    to_file = create_lines(different_dates, intervals, date, statuses, codes)
     save_in_file(to_file)
 
 
