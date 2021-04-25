@@ -90,9 +90,7 @@ def open_and_separate(filename):
             flag = False
             continue
 
-        if line.count(";") != 2:
-            print(f"Błędne dane wejściowe w linii numer {i + 1}! "
-                  f"Rezultat działania programu jej nie uwzględni.")
+        if line.count(c) != 2:
             continue
 
         year = int(line[0:4])
@@ -103,8 +101,8 @@ def open_and_separate(filename):
         seconds = int(line[17:19])
 
         if not is_valid_date(year, month, day) or not is_valid_time(hours, minutes, seconds):
-            print(f"Błędne dane wejściowe w linii numer {i + 1}! "
-                  f"Rezultat działania programu jej nie uwzględni.")
+            #  print(f"Błędne dane wejściowe w linii numer {i + 1}! "
+            #  f"Rezultat działania programu jej nie uwzględni.")
             continue
 
         len_of_file += 1
@@ -211,13 +209,11 @@ def operation_i(date, statuses, codes, day) -> bool:
         if not is_entry:
             return True
 
-
     return False
 
 
 def sum_of_hours_in_week(different_dates, intervals):
     """Return the sum of hours spent by the employee at work per week.
-
     format: [ (first week), (second week), ... ] in form: (...) = (h, min, sec)
     """
 
@@ -292,6 +288,7 @@ def full_time_weekly(different_dates) -> list:
 
 
 def display(different_dates, intervals, dates, statuses, codes):
+    output = []
     t = 0
     for i in range(len(different_dates)):
         opt = []
@@ -336,18 +333,41 @@ def display(different_dates, intervals, dates, statuses, codes):
                 difference = tuple_to_timeformat(convert_timedelta(difference))
                 difference = "-" + str(difference)
 
-            print(
-                f"Day {different_dates[i]} Work {intervals[i]} {list_to_str(opt)} "
-                f"{tuple_to_timeformat(sum_of_hours)} {difference}")
+            output.append(f"Day {different_dates[i]} Work {intervals[i]} {list_to_str(opt)} "
+                          f"{tuple_to_timeformat(sum_of_hours)} {difference}")
             t += 1
         else:
-            print(f"Day {different_dates[i]} Work {intervals[i]} {list_to_str(opt)}")
+            if len(opt) == 0:
+                output.append(f"Day {different_dates[i]} Work {intervals[i]}")
+            else:
+                output.append(f"Day {different_dates[i]} Work {intervals[i]} {list_to_str(opt)}")
+
+    return output
 
 
-def program(filename):
+def save_in_file(to_file, new_filename="result"):
+    f = open(new_filename, "w")
+
+    if len(to_file) == 0:
+        f.write(" ")
+        f.close()
+        return
+
+    for i, line in enumerate(to_file):
+        if i == len(to_file) - 1:
+            f.write(line)
+            break
+        f.write(f"{line}\n")
+
+    f.close()
+
+
+def program(filename="input.csv"):
     date, statuses, codes, len_of_file = open_and_separate(filename)
+    to_file = []
 
     if len_of_file == 0:
+        save_in_file(to_file)
         return
 
     date, statuses, codes = sort_lists(date, statuses, codes)
@@ -372,63 +392,9 @@ def program(filename):
             intervals.append(str(different_time(f2, f1)))
             f1 = date[i + 1]
 
-    display(different_dates, intervals, date, statuses, codes)
-
-
-def test():
-    day = []
-    month = []
-    year = []
-    hour = []
-    minute = []
-    second = []
-    reader = ["Reader entry", "Reader exit"]
-    codes = ["7-9", "7-9", "8-1", "8-3", "9-1", "6-6"]
-    n = 50
-
-    for i in range(n):
-        day.append(random.randint(1, 30))
-        month.append(random.randint(1, 12))
-        year.append(random.randint(2012, 2020))
-        hour.append(random.randint(0, 23))
-        minute.append(random.randint(0, 59))
-        second.append(random.randint(0, 59))
-
-    day = sorted(day)
-    month = sorted(month)
-    year = sorted(year)
-    hour = sorted(hour)
-    minute = sorted(minute)
-    second = sorted(second)
-
-    one = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-
-    for i in range(n):
-        day[i] = str(day[i])
-        month[i] = str(month[i])
-        year[i] = str(year[i])
-        hour[i] = str(hour[i])
-        minute[i] = str(minute[i])
-        second[i] = str(second[i])
-        if day[i] in one:
-            day[i] = "0" + day[i]
-        if month[i] in one:
-            month[i] = "0" + month[i]
-        if hour[i] in one:
-            hour[i] = "0" + hour[i]
-        if minute[i] in one:
-            minute[i] = "0" + minute[i]
-        if second[i] in one:
-            second[i] = "0" + second[i]
-
-    for i in range(n - 10):
-        a = random.randint(1, 100)
-        b1 = a % 2
-        b2 = a % 6
-        s = year[i] + "-" + month[i] + "-" + day[i] + " " + hour[i] + ":" + minute[i] + ":" + \
-            second[i] + "  ;" + reader[b1] + ";" + codes[b2]
-        print(s)
+    to_file = display(different_dates, intervals, date, statuses, codes)
+    save_in_file(to_file)
 
 
 if __name__ == '__main__':
-    program("input.csv")
+    program()
