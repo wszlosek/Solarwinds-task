@@ -1,4 +1,4 @@
-Zadanie wykonane w języku Python 3.7 z użyciem modułów time oraz datetime.
+Zadanie wykonane w języku Python 3.7 z użyciem modułu datetime.
 
 Przyjęte założenia:
 
