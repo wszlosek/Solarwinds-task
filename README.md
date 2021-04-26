@@ -30,11 +30,7 @@ Zgodnie z treścią zadania: "biurowiec posiada wejście główne z czytnikiem i
 
 Przyjąłem domyślny format każdej linii pliku jako: `yyyy-mm-dd hh:mm:ss ;Reader *;*/numer piętra/*/*`, jednak program jest odporny na pewne modyfikacje (np. inny znak zamiast średnika) lub na inny format identyfikatora drzwi - w takim przypadku nie będzie w stanie rozpoznać numeru piętra. Dopuszczalne jest, by pierwsza linia pliku nie zawierała konkretnych danych, a np. nazwy kolumn. Jeśli podczas wczytywania linii pliku, okaże się, że jej format jest inny niż ogólnie przyjęty (nawet spoza dopuszczalnych modyfikacji) lub jawnie błędny (np. zła data) to dana linia zostanie pominięta, a program będzie kontynuował swoje zadanie.
 
-Uznałem czas pracy w ciągu dnia za jednoznaczny, gdy oba następujące przypadki wystąpią: 
-
-a) musi istnieć minimum jedno entry wśród statusów (wejście do biura), jako, że nie znaliśmy konkretnego identyfikatora drzwi wejściowych (poza tym ktoś mógł wejść nierejestrując się: przez garaż), to nie można bardziej szczegółowo określić poprawności 
-
-b) ostatnim zdarzeniem w ciągu dnia musi być exit (z budynku) - jeśli program wraz z identyfikatorem drzwi poznał numer piętra, to exit musi być oczywiście z piętra 0. 
+Uznałem czas pracy w ciągu dnia za jednoznaczny, gdy ostatnim zdarzeniem w ciągu dnia jest exit (z budynku) - jeśli program wraz z identyfikatorem drzwi poznał numer piętra, to exit musi być oczywiście z piętra 0. 
 
 Jeśli którykolwiek z tych przypadków nie zachodzi, to zostaje wypisane `i`.
 
@@ -82,7 +78,7 @@ Plik wejściowy przyjmuje domyślnie nazwę `input.csv`, wyniki zapisuje w pliku
     # plik result
     
     Day 2016-07-21 Work 0:00:00 ut i 00:00:00 -08:00:00
-    Day 2017-07-23 Work 1:01:00 w ut i 01:01:00 -06:59:00
+    Day 2017-07-23 Work 1:01:00 w ut 01:01:00 -06:59:00
     Day 2017-08-23 Work 1:01:00 ut i
     Day 2017-08-24 Work 0:01:03 ut i 01:02:03 -14:57:57
     Day 2017-08-28 Work 1:25:18 ut 01:25:18 -06:34:42
