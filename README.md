@@ -30,7 +30,13 @@ Zgodnie z treścią zadania: "biurowiec posiada wejście główne z czytnikiem i
 
 Przyjąłem domyślny format każdej linii pliku jako: `yyyy-mm-dd hh:mm:ss ;Reader *;*/numer piętra/*/*`, jednak program jest odporny na pewne modyfikacje (np. inny znak zamiast średnika) lub na inny format identyfikatora drzwi - w takim przypadku nie będzie w stanie rozpoznać numeru piętra. Dopuszczalne jest, by pierwsza linia pliku nie zawierała konkretnych danych, a np. nazwy kolumn. Jeśli podczas wczytywania linii pliku, okaże się, że jej format jest inny niż ogólnie przyjęty (nawet spoza dopuszczalnych modyfikacji) lub jawnie błędny (np. zła data) to dana linia zostanie pominięta, a program będzie kontynuował swoje zadanie.
 
-Uznałem czas pracy w ciągu dnia za jednoznaczny, gdy oba następujące przypadki wystąpią: musi istnieć minimum jedno entry wśród statusów (wejście do biura), jako, że nie znaliśmy konkretnego identyfikatora drzwi wejściowych (poza tym ktoś mógł wejść nierejestrując się: przez garaż), to nie można bardziej szczegółowo określić poprawności oraz ostatnim zdarzeniem w ciągu dnia musi być exit (z budynku) - jeśli program wraz z identyfikatorem drzwi poznał numer piętra, to exit musi być oczywiście z piętra 0. Jeśli którykolwiek z tych przypadków nie zachodzi, to zostaje wypisane `i`.
+Uznałem czas pracy w ciągu dnia za jednoznaczny, gdy oba następujące przypadki wystąpią: 
+
+a) musi istnieć minimum jedno entry wśród statusów (wejście do biura), jako, że nie znaliśmy konkretnego identyfikatora drzwi wejściowych (poza tym ktoś mógł wejść nierejestrując się: przez garaż), to nie można bardziej szczegółowo określić poprawności 
+
+b) ostatnim zdarzeniem w ciągu dnia musi być exit (z budynku) - jeśli program wraz z identyfikatorem drzwi poznał numer piętra, to exit musi być oczywiście z piętra 0. 
+
+Jeśli którykolwiek z tych przypadków nie zachodzi, to zostaje wypisane `i`.
 
 ## Uruchomienie programu
 
