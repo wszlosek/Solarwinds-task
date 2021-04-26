@@ -1,6 +1,5 @@
 from datetime import datetime, timedelta
 import time
-import random
 
 
 def num_of_week(datess) -> int:
@@ -98,8 +97,6 @@ def open_and_separate(filename):
         seconds = int(line[17:19])
 
         if not is_valid_date(year, month, day) or not is_valid_time(hours, minutes, seconds):
-            #  print(f"Błędne dane wejściowe w linii numer {i + 1}! "
-            #  f"Rezultat działania programu jej nie uwzględni.")
             continue
 
         len_of_file += 1
@@ -194,13 +191,12 @@ def operation_i(date, statuses, codes, day) -> bool:
         if floor_list[-1] != "0" or "exit" not in str(statuses[last_index]):
             return True
 
-        # We assume that the office is on any NON-ZERO floor
+        # We assume that the office is on any floor
 
         is_entry = False
 
         for i, num_floor in enumerate(floor_list):
-            if num_floor != "0":
-                if "entry" in str(statuses[first_index + i]):
+            if "entry" in str(statuses[first_index + i]):
                     is_entry = True
 
         if not is_entry:
@@ -235,7 +231,7 @@ def sum_of_hours_in_week(different_dates, intervals):
         hourss, minutes, seconds = convert_timedelta(hours[h] - TIMEZERO)
         hours[h] = (hourss, minutes, seconds)
 
-    return hours  # [ (1 tydzien), (2 tydzien), ... ] w formie [ (h, min, sek), ... ]
+    return hours
 
 
 def tuple_to_timeformat(tup) -> str:
