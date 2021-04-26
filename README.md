@@ -32,7 +32,7 @@ Przyjąłem domyślny format każdej linii pliku jako: `yyyy-mm-dd hh:mm:ss ;Rea
 
 Uznałem czas pracy w ciągu dnia za jednoznaczny, gdy ostatnim zdarzeniem w ciągu dnia jest exit (z budynku) - jeśli program wraz z identyfikatorem drzwi poznał numer piętra, to exit musi być oczywiście z piętra 0. 
 
-Jeśli którykolwiek z tych przypadków nie zachodzi, to zostaje wypisane `i`.
+W przeciwnym wypadku zostaje wypisane `i`.
 
 ## Uruchomienie programu
 
