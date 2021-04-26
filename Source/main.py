@@ -167,17 +167,8 @@ def operation_i(date, statuses, codes, day) -> bool:
 
     # First case, the code is not a form "*/floor number/*/*"
     if flag:
-        # First situation: no "exit" in statuses at the exit of the building
+        # no "exit" in statuses at the exit of the building
         if "exit" not in statuses[last_index]:
-            return True
-
-        # Second situation: no "entry"
-        is_entry = False
-        for i in range(first_index, last_index + 1):
-            if "entry" in statuses[i]:
-                is_entry = True
-
-        if not is_entry:
             return True
 
     # Code of door: ("*/floor number/*/*")
@@ -190,16 +181,6 @@ def operation_i(date, statuses, codes, day) -> bool:
         if floor_list[-1] != "0" or "exit" not in str(statuses[last_index]):
             return True
 
-        # We assume that the office is on any floor
-
-        is_entry = False
-
-        for i, num_floor in enumerate(floor_list):
-            if "entry" in str(statuses[first_index + i]):
-                    is_entry = True
-
-        if not is_entry:
-            return True
 
     return False
 
