@@ -40,9 +40,9 @@ Jeśli którykolwiek z tych przypadków nie zachodzi, to zostaje wypisane `i`.
 
 ## Uruchomienie programu
 
-Program wykorzystuje funkcje z modułów `time` i `datetime`. Zatem w przypadku, gdy nie są one dostępne na Twoim komputerze, a chciałbyś pobrać ten program, powinieneś je zainstalować, np poprzez `pip`:
+Program wykorzystuje funkcje z modułu `datetime`. Zatem w przypadku, gdy nie jest on dostępny na Twoim komputerze, a chcesz pobrać ten program, zainstaluj go, np. poprzez `pip`:
 ```bash
-   pip install time datetime
+   pip install datetime
 ```
 Żeby zacząć korzystać z programu, możesz np. sklonować to repozytorium: wejdź do folderu lokalnego gdzie chcesz go umieścić i w terminalu wpisz:
 ```bash
@@ -55,7 +55,7 @@ Mając dostęp do projektu, możesz go uruchomić:
    python3 main.py
 ```
 ## Użyte technologie i szczegóły techniczne
-Program został napisany w języku Python (w wersji 3.7). Do działania potrzebuje dostępu do wspomnianych wcześniej modułów: `time` i `datetime`.
+Program został napisany w języku Python (w wersji 3.7). Do działania potrzebuje dostępu do wspomnianego wcześniej modułu `datetime`.
 
 ## Przykłady działania programu
 
