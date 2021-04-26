@@ -61,7 +61,10 @@ def is_valid_time(hours, minutes, seconds) -> bool:
 def open_and_separate(filename):
     """Reads data from a file, dividing it into columns."""
 
-    f = open(filename, "r")
+    try:
+        f = open(filename, "r")
+    except FileNotFoundError:
+        return ([],[],[],0)
     fields = []
     c = ";"
     i = 1
