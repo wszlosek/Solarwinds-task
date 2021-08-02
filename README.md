@@ -1,6 +1,6 @@
 # Zadanie: monitorowanie czasu spędzonego przez osobę w budynku.
 
-Zadanie praktyczne wykonane w języku Python na potrzeby pierwszego etapu rekrutacji w firmie SolarWinds.
+Zadanie praktyczne wykonane w języku Python na rekrutacji w firmie SolarWinds.
 
 ## Table of contents
 * [Opis projektu](#opis-projektu)
