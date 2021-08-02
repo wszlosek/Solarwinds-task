@@ -116,6 +116,6 @@ Plik wejściowy przyjmuje domyślnie nazwę `input.csv`, wyniki zapisuje w pliku
 ```
 
 ## Posłowie
-Obecna wersja projektu została przesłana do firmy SolarWinds.
+Obecna wersja projektu jest ostateczna
 
 26 kwietnia, 2021.
